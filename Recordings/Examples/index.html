@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Example login page</title>
+</head>
+
+<body>
+    <h1>Example login page</h1>
+    <div id="loginArea">
+        <input type="text" name="email" placeholder="E-mail address">
+        <input type="password" name="password" placeholder="Password">
+
+        <input type="submit" id="submit" value="Log in" onclick="login();">
+    </div>
+    <script>
+        var failedLogin = false;
+        function login() {
+            if (document.getElementsByName("email")[0].value === "user@example.com" && document.getElementsByName("password")[0].value === "password") {
+                failedLogin = false;
+                document.getElementById("loginArea").remove()
+                document.body.innerHTML += "<div class=\"success\">Login Complete.</div>"
+            } else if (!failedLogin) {
+                failedLogin = true;
+                document.getElementById("loginArea").innerHTML += "<div class=\"error\">Login Failed.</div>"
+            }
+        }
+    </script>
+
+</body>
+</html>

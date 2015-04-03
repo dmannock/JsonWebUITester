@@ -1,0 +1,51 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "file:///index.html"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "email"
+      },
+      "text": "user@example.com"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "name",
+        "value": "password"
+      },
+      "text": "password"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "submit"
+      }
+    },
+    {
+      "type": "verifyElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "div.success"
+      }
+    }
+  ],
+  "data": {
+    "configs": {
+      "json": {
+        "path": "E:\\Dans\\DevPublic\\JsonWebUITester\\Samples\\Example_login_page.json"
+      }
+    },
+    "source": "json"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
